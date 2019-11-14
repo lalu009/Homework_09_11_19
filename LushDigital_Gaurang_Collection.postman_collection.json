@@ -1,0 +1,695 @@
+{
+	"info": {
+		"_postman_id": "e66db7a5-5297-4ac4-9289-e01b163be3d3",
+		"name": "LushDigital_Gaurang_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "LoginWithValidUserNameWrongPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9305e22d-5aaf-4dd0-9904-5dfbd0013d82",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"carol\",\r\n\t\"password\": \"c1702bcfa2205d82e2c95a6f1c502627d3562453\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginWithValidUserNameValidPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"carol\",\r\n\t\"password\": \"c1702bcfa2205d82e2c95a6f1c502627d3562453\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						},
+						"description": "bug"
+					},
+					"response": []
+				},
+				{
+					"name": "LoginWith InValidUserNameValidPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"car\",\r\n\t\"password\": \"c1702bcfa2205d82e2c95a6f1c502627d3562453\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						},
+						"description": "bug"
+					},
+					"response": []
+				},
+				{
+					"name": "LoginWith BlankUserNameValidPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"pm.test(\"Status code is 422\", function () {",
+									"    pm.response.to.have.status(422);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"\",\r\n\t\"password\": \"c1702bcfa2205d82e2c95a6f1c502627d3562453\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						},
+						"description": "bug"
+					},
+					"response": []
+				},
+				{
+					"name": "LoginWithValidUserNameblankPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"carol\",\r\n\t\"password\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						},
+						"description": "bug"
+					},
+					"response": []
+				},
+				{
+					"name": "CrateNewProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"{\r",
+									"                \"id\": 5,\r",
+									"                \"name\": \"Lime Curd\",\r",
+									"                \"available\": 150,\r",
+									"                \"created_at\": \"2019-11-11T22:27:46.9078998Z\",\r",
+									"                \"updated_at\": \"2019-11-11T22:27:46.9078998Z\"\r",
+									"            }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n    \"name\": \"Lime Curd is very tangy,Lime Curd is very tangy,Lime Curd is very tangy,Lime Curd is very tangy,Lime \",\n    \"available\": 150,\n    \"created_at\": \"2018-07-30T09:18:37Z\",\n    \"updated_at\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crate New Product with lenght of more than 98 characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"{\r",
+									"                \"id\": 5,\r",
+									"                \"name\": \"Lime Curd\",\r",
+									"                \"available\": 150,\r",
+									"                \"created_at\": \"2019-11-11T22:27:46.9078998Z\",\r",
+									"                \"updated_at\": \"2019-11-11T22:27:46.9078998Z\"\r",
+									"            }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \r\n                \"name\": \"Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,\",\r\n                \"available\": 150\r\n                \r\n            }\r\n            \r\n            ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crate New Product with lenght of 97 characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"{\r",
+									"                \"id\": 5,\r",
+									"                \"name\": \"Lime Curd\",\r",
+									"                \"available\": 150,\r",
+									"                \"created_at\": \"2019-11-11T22:27:46.9078998Z\",\r",
+									"                \"updated_at\": \"2019-11-11T22:27:46.9078998Z\"\r",
+									"            }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \r\n                \"name\": \"Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,\",\r\n                \"available\": 150\r\n                \r\n            }\r\n            \r\n            ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crate New Product with lenght of more than 96 characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									"{\r",
+									"                \"id\": 5,\r",
+									"                \"name\": \"Lime Curd\",\r",
+									"                \"available\": 150,\r",
+									"                \"created_at\": \"2019-11-11T22:27:46.9078998Z\",\r",
+									"                \"updated_at\": \"2019-11-11T22:27:46.9078998Z\"\r",
+									"            }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \r\n                \"name\": \"Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,Lime Curd is very sweet,\",\r\n                \"available\": 150\r\n                \r\n            }\r\n            \r\n            ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Orange curd 🍓\",\n    \"available\": 100,\n    \"created_at\": \"2018-07-30T09:18:37Z\",\n    \"updated_at\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "GetSingleProductFromProductListById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListOfAllProducts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f3960d-42c3-44a9-ac52-a39a2d122901",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Put",
+			"item": [
+				{
+					"name": "update product by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "34318945-032a-408a-a6e9-bdf197b9b637",
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\t\"name\": \"Lime Curd\",\r\n\t\"available\": 150\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "delete product by its id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "34318945-032a-408a-a6e9-bdf197b9b637",
+								"exec": [
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products/13",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product by invalid Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "34318945-032a-408a-a6e9-bdf197b9b637",
+								"exec": [
+									"",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products/14",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
